@@ -7,3 +7,6 @@ class Blog(models.Model):
     date = models.DateField()
     text = models.TextField()
     image = models.ImageField(upload_to='blog_media/')
+
+    def get_summary(self):
+        return self.text[:70] + '...'
